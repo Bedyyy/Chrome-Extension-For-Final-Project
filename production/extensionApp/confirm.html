@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="full-page-container">
+        <div class="main-card is-danger">
+            <img src="https://img.icons8.com/plasticine/100/error.png" alt="Warning Icon" class="card-icon"/>
+            <h1 class="card-title is-danger">Peringatan Keamanan</h1>
+            <p class="card-subtitle">Situs ini berpotensi berbahaya. Anda yakin ingin melanjutkan?</p>
+            <div class="phishing-info">
+                <p>Mengunjungi situs phishing dapat membawa risiko serius, di antaranya:</p>
+                <ul>
+                    <li><strong>Pencurian Data Pribadi:</strong> Informasi sensitif seperti kata sandi, nomor kartu kredit, dan data pribadi lainnya dapat dicuri.</li>
+                    <li><strong>Penyalahgunaan Data:</strong> Data yang dicuri dapat digunakan untuk penipuan, pencurian identitas, atau aktivitas ilegal lainnya yang merugikan Anda.</li>
+                </ul>
+                <p class="source-info">Untuk selengkapnya, baca di: 
+                    <a href="https://id.wikipedia.org/wiki/Pengelabuan" target="_blank" rel="noopener noreferrer">
+                       Wikipedia
+                    </a>
+                </p>
+            </div>
+            <div class="button-group">
+                <button id="go-back" class="button btn-primary">Kembali</button>
+                <button id="proceed" class="button btn-danger">Lanjutkan dengan Risiko</button>
+            </div>
+        </div>
+    </div>
+    <script src="confirm.js"></script>
+</body>
+</html>
+

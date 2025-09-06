@@ -1,0 +1,294 @@
+:root {
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --primary-text: #2c3e50;
+  --secondary-text: #7f8c8d;
+  --border-color: #e0e6ed;
+  --accent-color: #3498db;
+  --accent-hover: #2980b9;  
+  --safe-color: #27ae60;
+  --safe-bg: #eafaf1;
+  --danger-color: #e74c3c;
+  --danger-border: #c0392b;
+  --danger-bg: #fdedec;
+  --warning-color: #f39c12;
+  --warning-border: #f1c40f;
+  --unknown-color: #95a5a6;
+  --unknown-bg: #ecf0f1;
+  --font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+}
+.popup-body {
+  width: 360px;
+}
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.popup-header {
+  text-align: center;
+}
+.popup-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.info-section,
+.ad-blocker-section,
+.manual-analysis-section {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(44, 62, 80, 0.05);
+}
+.url-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--secondary-text);
+  margin-bottom: 4px;
+}
+.url {
+  font-weight: 500;
+  font-size: 0.9rem;
+  word-break: break-all;
+  color: var(--accent-color);
+  margin-bottom: 12px;
+}
+.status {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.status.phishing {
+  color: var(--danger-color);
+  background-color: var(--danger-bg);
+}
+.status.safe {
+  color: var(--safe-color);
+  background-color: var(--safe-bg);
+}
+.status.unknown {
+  color: var(--unknown-color);
+  background-color: var(--unknown-bg);
+}
+.ad-block-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.ad-block-counter .count {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1;
+}
+.ad-block-counter .ad-block-label {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+.manual-analysis-section h4 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.manual-analysis-section input[type="url"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.manual-analysis-section input[type="url"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+.manual-analysis-section button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.manual-analysis-section button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+.full-page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+.loading-box .animation {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+.loading-box h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.loading-box p {
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+  margin-top: 8px;
+}
+.main-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  border-top: 5px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.5s ease;
+}
+.main-card.is-danger {
+  border-top-color: var(--danger-color);
+}
+.main-card.is-safe {
+  border-top-color: var(--safe-color);
+}
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+.card-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.card-title.is-danger {
+  color: var(--danger-color);
+}
+.card-title.is-safe {
+  color: var(--safe-color);
+}
+.card-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: var(--primary-text);
+}
+.card-subtitle .url-display {
+  font-weight: 700;
+  color: var(--accent-color);
+  word-break: break-all;
+}
+.card-text {
+  font-size: 1rem;
+  color: var(--secondary-text);
+  margin-bottom: 30px;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+.button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn-primary {
+  background-color: var(--safe-color);
+}
+.btn-danger {
+  background-color: var(--danger-color);
+}
+.btn-secondary {
+  background-color: var(--card-bg);
+  color: var(--secondary-text);
+  border-color: var(--border-color);
+}
+.btn-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: var(--secondary-text);
+}
+.phishing-info {
+    text-align: left;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fef3cd;
+    border-left: 5px solid #ffc107;
+    max-width: 90%;
+    border-radius: 5px;
+}
+.phishing-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #664d03;
+}
+.phishing-info ul {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.phishing-info li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.source-info {
+    margin-top: 15px !important;
+    font-size: 12px !important;
+    font-style: italic;
+}
+.source-info a {
+    color: #0056b3;
+    text-decoration: none;
+}
+.source-info a:hover {
+    text-decoration: underline;
+}
+.warning-body .question {
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 18px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Phishing Detector</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <div class="popup-container">
+      <div class="popup-header">
+        <h3>Phishing & Ad Detector</h3>
+      </div>
+
+      <div class="info-section">
+        <div class="url-label">Halaman Saat Ini:</div>
+        <p id="current-url" class="url">Memuat...</p>
+        <div id="analysis-status" class="status unknown">Belum Dianalisis</div>
+      </div>
+
+      <div class="ad-blocker-section">
+        <div class="ad-block-counter">
+          <div id="ad-count" class="count">0</div>
+          <div class="ad-block-label">Konten Iklan Disaring</div>
+        </div>
+      </div>
+
+      <div class="manual-analysis-section">
+        <h4>Analisis URL Manual</h4>
+        <input
+          type="url"
+          id="manual-url-input"
+          placeholder="Masukkan URL Disini..."
+        />
+        <button id="manual-check-button">Analisis Sekarang</button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
